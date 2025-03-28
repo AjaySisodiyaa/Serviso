@@ -4,21 +4,21 @@
 import React from "react";
 import SearchFilter from "./SearchFIlter";
 
-interface PostProps {
-  _id: number;
-  title: string;
-  discription: string;
-  image: string;
-  price: number;
-  previousPrice: number;
-  isNew: boolean;
-  category: string;
-  brand: string;
-}
+// interface PostProps {
+//   _id: number;
+//   title: string;
+//   discription: string;
+//   image: string;
+//   price: number;
+//   previousPrice: number;
+//   isNew: boolean;
+//   category: string;
+//   brand: string;
+// }
 
-interface Props {
-  posts: PostProps[];
-}
+// interface Props {
+//   posts: PostProps[];
+// }
 
 const getPost = async () => {
   const res = await fetch("http://localhost:3000/api/postjson");
@@ -28,7 +28,9 @@ const getPost = async () => {
   }
   return res.json();
 };
-const Posts = async ({ posts }: Props) => {
+const Posts = async (
+  // { posts }: Props
+) => {
   const searchPost = await getPost();
 
   return (
