@@ -3,11 +3,10 @@ import { getSinglePost } from "@/helpers";
 import Image from "next/image";
 import React from "react";
 
-type Props = {
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-const page = async ({ searchParams }: Props) => {
-  const { _id } =  searchParams;
+type tParams = Promise<{ _id: string[] }>;
+
+const page = async (props: { params: tParams }) => {
+  const { _id } = await props.params;
   const _idString = Number(_id);
   const post = await getSinglePost(_idString);
   return (
