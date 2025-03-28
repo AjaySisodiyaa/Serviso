@@ -7,7 +7,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 const page = async ({ searchParams }: Props) => {
-  const { _id } = await searchParams;
+  const { _id } =  searchParams;
   const _idString = Number(_id);
   const post = await getSinglePost(_idString);
   return (
